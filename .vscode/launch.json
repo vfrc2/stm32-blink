@@ -10,16 +10,16 @@
             "request": "launch",
             "miDebuggerPath": "/usr/bin/arm-none-eabi-gdb",
             "targetArchitecture": "arm",
-            "program": "${workspaceRoot}/main.elf",
+            "program": "${workspaceRoot}/blink.elf",
             "setupCommands": [
                 {
-                    "text": "file '${workspaceRoot}/main.elf'"
+                    "text": "file '${workspaceRoot}/blink.elf'"
                 },
                 {
                     "text": "target extended-remote :4242"
                 },
                 {
-                    "text": "load ${workspaceRoot}/main.elf"
+                    "text": "load ${workspaceRoot}/blink.elf"
                 }
             ],
             // "preLaunchTask": "make",
