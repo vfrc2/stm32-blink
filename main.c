@@ -1,3 +1,6 @@
+#include <stdint.h>
+#include <stm32f100xb.h>
+
 /* Main program. */
 int main(void) {
   int val = 0;

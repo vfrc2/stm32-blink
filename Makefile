@@ -49,6 +49,10 @@ LFLAGS += -T$(LSCRIPT)
 AS_SRC += ./startup_stm32f100xb.S
 C_SRC = ./main.c
 
+INCLUDE =  -I./
+INCLUDE += -I./lib/CMSIS/Core/Include
+INCLUDE += -I./lib/CMSIS/Device/ST/STM32F1xx/Include
+
 OBJS =  $(AS_SRC:.S=.o)
 OBJS += $(C_SRC:.c=.o)
 
