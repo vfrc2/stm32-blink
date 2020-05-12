@@ -46,6 +46,8 @@ LFLAGS += -lgcc
 #LFLAGS += -static
 LFLAGS += -T$(LSCRIPT)
 
+DEFINE = -DSTM32F100xB
+
 AS_SRC += ./startup_stm32f100xb.S
 C_SRC = ./main.c
 
@@ -63,10 +65,10 @@ all: $(TARGET).elf $(TARGET).bin
 	$(CC) -x assembler-with-cpp $(ASFLAGS) $< -o $@
 
 %.o: %.c
-	$(CC) -c $(CFLAGS) $(INCLUDE) $< -o $@
+	$(CC) -c $(CFLAGS) $(INCLUDE) $(DEFINE) $< -o $@
 
 $(TARGET).elf: $(OBJS)
-	$(CC) $^ $(LFLAGS) -o $@
+	$(CC) $^ $(LFLAGS) -o $@make
 
 $(TARGET).bin: $(TARGET).elf
 	$(OC) -S -O binary $< $@
